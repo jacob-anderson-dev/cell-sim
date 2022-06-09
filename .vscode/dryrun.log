@@ -1,7 +1,8 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/jacobanderson/Desktop/scratch/cell-sim'
-g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -o output/main src/main.o  -Llib -Llib/pkgconfig -Llib/cmake -Llib/cmake/SFML -l sfml-graphics -l sfml-window -l sfml-system
- 
+mkdir -p output
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/main.cpp  -o src/main.o
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -o output/main src/main.o  -Llib -Llib/pkgconfig -Llib/cmake -Llib/cmake/SFML -l sfml-graphics -l sfml-window -l sfml-system
 echo Executing 'all' complete!
 make: Leaving directory `/Users/jacobanderson/Desktop/scratch/cell-sim'
  
