@@ -1,84 +1,85 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build",
-            "type": "shell",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-c",
-                    "mingw32-make"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "make"
-                ]
-            },
-            "osx": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "make"
-                ]
-            }
-        },
-        {
-            "label": "build & run",
-            "type": "shell",
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-c",
-                    "'mingw32-make run'"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make run'"
-                ]
-            },
-            "osx": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make run'"
-                ]
-            }
-        },
-        {
-            "label": "clean",
-            "type": "shell",
-            "windows": {
-                "command": "powershell",
-                "args": [
-                    "-c",
-                    "'mingw32-make clean'"
-                ]
-            },
-            "linux": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make clean'"
-                ]
-            },
-            "osx": {
-                "command": "bash",
-                "args": [
-                    "-c",
-                    "'make clean'"
-                ]
-            }
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "windows": {
+        "command": "powershell",
+        "args": ["-c", "mingw32-make"]
+      },
+      "linux": {
+        "command": "bash",
+        "args": ["-c", "make"]
+      },
+      "osx": {
+        "command": "bash",
+        "args": ["-c", "make"]
+      }
+    },
+    {
+      "label": "build & run",
+      "type": "shell",
+      "windows": {
+        "command": "powershell",
+        "args": ["-c", "'mingw32-make run'"]
+      },
+      "linux": {
+        "command": "bash",
+        "args": ["-c", "'make run'"]
+      },
+      "osx": {
+        "command": "bash",
+        "args": ["-c", "'make run'"]
+      }
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "windows": {
+        "command": "powershell",
+        "args": ["-c", "'mingw32-make clean'"]
+      },
+      "linux": {
+        "command": "bash",
+        "args": ["-c", "'make clean'"]
+      },
+      "osx": {
+        "command": "bash",
+        "args": ["-c", "'make clean'"]
+      }
+    },
+    {
+      "label": "My task",
+      "command": "code -r '${input:includeDir}/${input:className}.h' '${input:srcDir}/${input:className}.cpp'",
+      "type": "shell",
+      "presentation": {
+        "reveal": "never"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "className",
+      "description": "Name of class",
+      "default": "Foo"
+    },
+    {
+      "type": "promptString",
+      "id": "includeDir",
+      "description": "Include directory",
+      "default": "./include"
+    },
+    {
+      "type": "promptString",
+      "id": "srcDir",
+      "description": "Source directory",
+      "default": "./src"
+    }
+  ]
 }
