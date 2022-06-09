@@ -1,6 +1,12 @@
-#include "../include/CellSim/coordinate.h"
+#include "../include/CellSim/Coordinate.h"
 
-Coordinate::Coordinate(int x,int y)
+Coordinate::Coordinate()
+{
+    setXPosition(0);
+    setYPosition(0);
+}
+
+Coordinate::Coordinate(int x, int y)
 {
     setXPosition(x);
     setYPosition(y);

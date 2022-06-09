@@ -9,7 +9,7 @@ class Food : public Entity
 {
 
 public:
-    Food(int energyValue=1);
+    Food(int energyValue = 1);
     ~Food();
     int getEnergyValue();
     void setEnergyValue(int energyValue);

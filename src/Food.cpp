@@ -1,6 +1,6 @@
 #include "../include/CellSim/Food.h"
 
-Food::Food(int energyValue=1)
+Food::Food(int energyValue)
 {
     setEnergyValue(energyValue);
 }
