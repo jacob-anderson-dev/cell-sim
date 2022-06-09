@@ -1,32 +1,27 @@
-#ifndef COORDINATE_H
-#define COORDINATE_H
+#include "../include/CellSim/coordinate.h"
 
-class Coordinate {
-    private:
-        int xPosition;
-        int yPosition;
+Coordinate::Coordinate(int x,int y)
+{
+    setXPosition(x);
+    setYPosition(y);
+}
 
-    public:
-        Coordinate(int x,int y){
-            setXPosition(x);
-            setYPosition(y);
-        }
+// Getters
+int Coordinate::getXPosition() const
+{
+    return xPosition;
+}
+int Coordinate::getYPosition() const
+{
+    return yPosition;
+}
 
-        // Getters
-        int getXPosition() {
-            return xPosition;
-        }
-        int getYPosition(){
-            return yPosition;
-        }
-
-        // Setters
-        void setXPosition(int x) {
-            xPosition = x;
-        }
-        void setYPosition(int y){
-            yPosition = y;
-        }
-};
-
-#endif
+// Setters
+void Coordinate::setXPosition(int x)
+{
+    xPosition = x;
+}
+void Coordinate::setYPosition(int y)
+{
+    yPosition = y;
+}

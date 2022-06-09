@@ -3,14 +3,18 @@
 
 #pragma once
 
-class Entity
+#include "../include/CellSim/Coordinate.h"
+
+class Entity 
 {
 
 public:
     Entity();
     ~Entity();
-
+    Coordinate getCoordinate() const;
+    void setCoordinate(Coordinate coordinate);
 private:
+    Coordinate coordinate;
 };
 
 #endif
