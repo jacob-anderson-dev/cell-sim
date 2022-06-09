@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Jun  9 08:44:48 2022
+# Make data base, printed on Thu Jun  9 09:07:15 2022
 
 # Variables
 
@@ -36,12 +36,13 @@ SHELL = /bin/sh
 RM = rm -f
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+ 
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from `Makefile', line 54)
-SOURCES := src/main.cpp
+SOURCES := src/Cell.cpp src/Eater.cpp src/Entity.cpp src/Food.cpp src/Grid.cpp src/Maker.cpp src/Mover.cpp src/main.cpp
 # makefile (from `Makefile', line 10)
 CXXFLAGS := -std=c++17 -Wall -Wextra -g
 # environment
@@ -95,7 +96,7 @@ VSCODE_CODE_CACHE_PATH = /Users/jacobanderson/Library/Application Support/Code/C
 # environment
 LOGNAME = jacobanderson
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 NVM_CD_FLAGS = -q
 # makefile (from `Makefile', line 40)
@@ -183,7 +184,7 @@ SUFFIXES :=
 # environment
 MAKELEVEL := 0
 # makefile (from `Makefile', line 57)
-OBJECTS := src/main.o
+OBJECTS := src/Cell.o src/Eater.o src/Entity.o src/Food.o src/Grid.o src/Maker.o src/Mover.o src/main.o
 # environment
 LANG = C
 # environment
@@ -199,10 +200,10 @@ NVM_RC_VERSION =
 
 # Directories
 
-# . (device 16777239, inode 16712931): 11 files, no impossibilities.
-# src (device 16777239, inode 16712969): 5 files, no impossibilities.
+# . (device 16777239, inode 16712931): 12 files, no impossibilities.
+# src (device 16777239, inode 16712969): 19 files, no impossibilities.
 
-# 16 files, no impossibilities in 2 directories.
+# 31 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -222,6 +223,15 @@ all: output main
 	@echo Executing 'all' complete!
 	
 
+# Not a target:
+src/Food.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 09:06:05
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 .PHONY: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -230,7 +240,16 @@ all: output main
 # Not a target:
 src/main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 08:31:56
+#  Last modified 2022-06-09 09:06:05
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/Grid.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 09:06:05
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -243,9 +262,53 @@ src/main.o:
 #  File has not been updated.
 
 # Not a target:
+src/Entity.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 09:06:05
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-09 08:24:28
+#  Last modified 2022-06-09 09:07:03
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/Maker.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 09:06:05
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+simpleclean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 90):
+	$(RM) $(call FIXPATH,$(OBJECTS))
+	
+
+# Not a target:
+src/Mover.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 09:06:05
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/Eater.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 09:06:04
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -261,7 +324,7 @@ run: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 90):
+#  commands to execute (from `Makefile', line 93):
 	./$(OUTPUTMAIN)
 	@echo Executing 'run: all' complete!
 	
@@ -277,6 +340,7 @@ run: all
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 85):
@@ -285,7 +349,7 @@ clean:
 	@echo Cleanup complete!
 	
 
-main: src/main.o
+main: src/Cell.o src/Eater.o src/Entity.o src/Food.o src/Grid.o src/Maker.o src/Mover.o src/main.o
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `'
 #  File does not exist.
@@ -298,15 +362,15 @@ main: src/main.o
 # automatic
 # * := 
 # automatic
-# + := src/main.o
+# + := src/Cell.o src/Eater.o src/Entity.o src/Food.o src/Grid.o src/Maker.o src/Mover.o src/main.o
 # automatic
 # | := 
 # automatic
-# < := src/main.o
+# < := src/Cell.o
 # automatic
-# ^ := src/main.o
+# ^ := src/Cell.o src/Eater.o src/Entity.o src/Food.o src/Grid.o src/Maker.o src/Mover.o src/main.o
 # automatic
-# ? := src/main.o
+# ? := src/Cell.o src/Eater.o src/Entity.o src/Food.o src/Grid.o src/Maker.o src/Mover.o src/main.o
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/17=12%
 #  commands to execute (from `Makefile', line 74):
@@ -315,16 +379,24 @@ main: src/main.o
 
 output:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-09 08:31:56
+#  Last modified 2022-06-09 09:06:05
 #  File has been updated.
 #  Successfully updated.
- 
 #  commands to execute (from `Makefile', line 71):
 	$(MD) $(OUTPUT)
 	
 
+# Not a target:
+src/Cell.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-09 09:06:04
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/30=0%
+# Load=19/1024=2%, Rehash=0, Collisions=0/45=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -336,6 +408,6 @@ output:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jun  9 08:44:48 2022
+# Finished Make data base on Thu Jun  9 09:07:15 2022
 
  

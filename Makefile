@@ -86,6 +86,9 @@ clean:
 	$(RM) $(call FIXPATH,$(OBJECTS))
 	@echo Cleanup complete!
 
+simpleclean:
+	$(RM) $(call FIXPATH,$(OBJECTS))
+
 run: all
 	./$(OUTPUTMAIN)
 	@echo Executing 'run: all' complete!
