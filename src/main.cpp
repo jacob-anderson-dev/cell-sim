@@ -19,12 +19,6 @@ int main(int argc, char *argv[])
 			case Event::Closed:
 				window.close();
 				break;
-			case Event::KeyPressed:
-				if (event.key.code == Keyboard::Space)
-				{
-					std::cout << "Space pressed\n";
-				}
-				break;
 			default:
 				break;
 			}
