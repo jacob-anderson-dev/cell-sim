@@ -1,5 +1,10 @@
 #include "../include/CellSim/Maker.h"
 
+/*
+    step()
+        createFood()
+*/
+
 Maker::Maker()
 {
 }

@@ -16,3 +16,7 @@ private:
 };
 
 #endif
+
+/*
+    foodEnergyAmount = 1;
+*/
