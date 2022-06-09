@@ -14,3 +14,9 @@ private:
 };
 
 #endif
+
+/*
+    xPosition = 0
+    yPosition = 0
+    currentLocation = vector(xPosition, yPosition)
+*/
