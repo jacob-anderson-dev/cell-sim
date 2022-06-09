@@ -1,8 +1,15 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/jacobanderson/Desktop/scratch/cell-sim'
-mkdir -p output
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/Cell.cpp  -o src/Cell.o
+ 
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/Eater.cpp  -o src/Eater.o
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/Entity.cpp  -o src/Entity.o
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/Food.cpp  -o src/Food.o
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/Grid.cpp  -o src/Grid.o
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/Maker.cpp  -o src/Maker.o
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/Mover.cpp  -o src/Mover.o
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -c src/main.cpp  -o src/main.o
-g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -o output/main src/main.o  -Llib -Llib/pkgconfig -Llib/cmake -Llib/cmake/SFML -l sfml-graphics -l sfml-window -l sfml-system
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -Iinclude/SFML -Iinclude/SFML/Network -Iinclude/SFML/System -Iinclude/SFML/Audio -Iinclude/SFML/Window -Iinclude/SFML/Graphics -Iinclude/CellSim -o output/main src/Cell.o src/Eater.o src/Entity.o src/Food.o src/Grid.o src/Maker.o src/Mover.o src/main.o  -Llib -Llib/pkgconfig -Llib/cmake -Llib/cmake/SFML -l sfml-graphics -l sfml-window -l sfml-system
 echo Executing 'all' complete!
 make: Leaving directory `/Users/jacobanderson/Desktop/scratch/cell-sim'
  
