@@ -1,0 +1,177 @@
+Grid
+    Cell grid[][]
+
+    step()
+        for cell in grid
+            if cell.getEnergy() < cell.getEnergyToSurvive()
+                cell.setIsLiving(false)
+
+            if cell.getEnergy() >= cell.getEnergyToSplit()
+                new Cell d1 = Cell(cell.getD1Energy(), cell.getEnergyToSplit(), cell.getEnergyToSurvive())
+                new Cell d2 = Cell(cell.getEnergy() - cell.getD1Energy(), cell.getEnergyToSplit(), cell.getEnergyToSurvive())
+                self.setCell(cell.getNeighbors()[cell.getD1RelativeLocation()], d1)
+                self.setCell(cell.getCoords(), d2)
+
+            if cell.getIsLiving() == false
+                self.setCell(cell.getCoords(), new Food())
+
+            if instanceof<Maker>(cell)
+                self.setCell(cell.getCoords() + randomRelativeLocation, new Food())
+
+            if instanceof<Mover>(cell)
+                self.setCell(cell.getNeighbors()[cell.getRelativeLocation()], cell)
+                self.setCell(cell.getCoords(), new Empty())
+
+            if instanceof<Eater>(cell)
+                Coords neighbors[] = cell.getNeighbors()
+                for (int i = 0; i < 8; i++)
+                    Cell neighbor = self.getCell(neighbors[i])
+                    if instanceof<Food>(neighbor)
+                        cell.setEnergy(neighbor.getEnergy())
+                        self.setCell(neighbor.getCoords(), new Empty())
+
+            cell.action()
+            cell.setEnergy(cell.getEnergy() - 0.01)
+
+    setCell(coords, cell)
+        grid[coords.x()][coords.y()] = cell
+
+    getCell(coords)
+        return grid[coords.x()][coords.y()]
+
+Cell
+    Sprite
+    Texture
+
+    coords
+
+    energy
+    energyToSplit
+    energyToSurvive
+    isLiving = true
+
+    d1CellType
+    d2CellType
+    d1RelativeLocation
+    d1Energy
+    
+    Cell()
+    Cell(Cell)
+    Cell(coords, energy, energyToSplit, energyToSurvive)
+    Cell(coords, energy, energyToSplit, energyToSurvive, d1CellType, d2CellType, d1RelativeLocation, d1Energy)
+    
+    virtual action()
+
+    getNeighbors()
+        Coord neighbors[]
+
+        //The center cell
+        neighbors.push(self.coords)                                              //Center        -0
+
+        //Left right up and down
+        neighbors.push(new Coords(self.coords.x() - 1,  self.coords.y()))        //Left          - 1
+        neighbors.push(new Coords(self.coords.x() + 1,  self.coords.y()))        //Right         - 2
+        neighbors.push(new Coords(self.coords.x(),      self.coords.y() - 1))    //Down          - 3
+        neighbors.push(new Coords(self.coords.x(),      self.coords.y() - 1))    //Up            - 4
+
+        //Diagonals
+        neighbors.push(new Coords(self.coords.x() - 1,  self.coords.y() - 1))    //Down Left     - 5
+        neighbors.push(new Coords(self.coords.x() - 1,  self.coords.y() + 1))    //Up Left       - 6
+        neighbors.push(new Coords(self.coords.x() - 1,  self.coords.y() - 1))    //Down Right    - 7
+        neighbors.push(new Coords(self.coords.x() - 1,  self.coords.y() + 1))    //Up Right      - 8
+
+        return neighbors   
+
+Food is Cell
+Empty is Cell
+
+Eater is Cell
+    action()
+
+
+Maker is Cell
+    action()
+        self.setEnergy(self.energy + 1)
+
+Mover is Cell
+    action()
+        self.setEnergy(self.energy - .01)
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Steps for implimentation
+
+Handle click on grid cell
+    get click getCoords()
+    get cell getCoords()
+    if match cell is clicked
+        if empty place cell
+        if cell place empty
+
+Draw a button for the menu
+    Hook the menu button to a function
+        Function draws main menu UI
+            Draw all menu buttons
+                Play/Pause
+                Step
+                Reset
+                Edit
+
+Hook buttons to separate functions
+
+out step function
+    // Most logic here
+
+out reset function
+    just erases the grid so it is all blank
+
+out play/pause function
+
+edit function
+
+Draw cell Editor UI
+    Drop down menu for current cell to edit
+    Drop down menu for cell type of current cell
+    Drop down menu for the cell type of d1
+        Number between 0 and 7 for relativeLocation to split from parent
+        Number for percentage of parent energy to be given to d1
+    Drop down menu for the cell type of d2
+        Number between 0 and 7 for relativeLocation to split from parent
+    Number for amount of energy cell starts with
+    Number for the amount of energy needed to split
+    Number for the amount of energy a cell needs to stay alive
+    Number for the amount of food to produce on cell death
+    Done Button
+
+/*
+    STICKY LOGIC, TO BE IMPLIMENTED
+
+    Checkbox for if cell should be sticky
+    Checkbox for if d1 keeps sticky
+    Checkbox for if d2 keeps sticky
+
+    if isSticky
+        for cell in grid.getNeighbors()
+            giveEnergy(getCoords(), amount)
+            cell.isSticky = false
+
+    move.action() with sticky
+        for cell in grid.getNeighbors()
+            cell.move()
+
+    shareEnergy()
+        give energy to all connected cells using given share energy amount
+*/
+

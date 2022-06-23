@@ -10,11 +10,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `src/Cell.o', needed by `main'.  Stop.
 
 
-# Make data base, printed on Thu Jun  9 13:08:05 2022
+# Make data base, printed on Thu Jun 23 14:05:51 2022
 
 # Variables
 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -53,7 +54,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/gz/y3dgnxcx58j9gjhs04bbg7740000gn/T/vscode-ipc-a8514e68-7300-4d89-818f-49d596826c41.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/gz/y3dgnxcx58j9gjhs04bbg7740000gn/T/vscode-ipc-be82ec37-666c-40b5-8f91-d18dd35bd666.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -71,7 +72,7 @@ LIB := lib
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.2AAoWKTV0b/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.n0W0oDOeUq/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -93,7 +94,7 @@ HOME = /Users/jacobanderson
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/jacobanderson/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /Users/jacobanderson/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = jacobanderson
 # environment
@@ -139,7 +140,7 @@ TMPDIR = /var/folders/gz/y3dgnxcx58j9gjhs04bbg7740000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/jacobanderson/Library/Application Support/Code/1.67.2-main.sock
+VSCODE_IPC_HOOK = /Users/jacobanderson/Library/Application Support/Code/1.68.1-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -151,7 +152,7 @@ NVM_DIR = /Users/jacobanderson/.nvm
 # makefile (from `Makefile', line 38)
 MAIN := main
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.14626916.14626922
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.17134085.17134092
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -189,7 +190,7 @@ OBJECTS := src/Cell.o src/Coordinate.o src/Eater.o src/Entity.o src/Food.o src/G
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4849
+VSCODE_PID = 2609
 # environment
 NVM_RC_VERSION = 
 # variable set hash-table stats:
@@ -201,8 +202,8 @@ NVM_RC_VERSION =
 
 # Directories
 
-# . (device 16777239, inode 16712931): 12 files, no impossibilities.
-# src (device 16777239, inode 16712969): 12 files, no impossibilities.
+# . (device 16777232, inode 16712931): 12 files, no impossibilities.
+# src (device 16777232, inode 16712969): 12 files, no impossibilities.
 
 # 24 files, no impossibilities in 2 directories.
 
@@ -288,6 +289,7 @@ simpleclean:
 	
 
 # Not a target:
+ 
 src/Mover.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -315,7 +317,6 @@ run: all
 	
 
 .cpp.o:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -346,7 +347,7 @@ main: src/Cell.o src/Coordinate.o src/Eater.o src/Entity.o src/Food.o src/Grid.o
 
 output:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-09 09:16:14
+#  Last modified 2022-06-09 13:13:33
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 71):
@@ -374,6 +375,6 @@ src/Cell.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jun  9 13:08:05 2022
+# Finished Make data base on Thu Jun 23 14:05:51 2022
 
  
