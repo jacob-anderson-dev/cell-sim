@@ -11,11 +11,7 @@ public:
     ~Maker();
 
 private:
+
 };
 
 #endif
-
-/*
-    step()
-        createFood()
-*/
